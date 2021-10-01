@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 //MatSnackBar - Exibir mensagens de erro e sucesso na tela
 import { MatSnackBar } from '@angular/material/snack-bar';
 
+import { Login } from '../../models';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -40,6 +42,9 @@ export class LoginComponent implements OnInit {
       this.snackBar.open("Dados inválidos", "Erro", {duration: 5000});
       return;
     }
-    alert(JSON.stringify(this.form.value));
+    const login : Login = this.form.value; //Adicionando os dados do formulário na classe login
+    //alert(JSON.stringify(this.form.value));
+    alert(JSON.stringify(login));
+
   }
 }
